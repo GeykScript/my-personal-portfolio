@@ -10,10 +10,10 @@ export default function profile() {
                 </div>
 
                 {/* Profile Section */}
-                <div className="bg-gray-100 flex gap-4 pt-2 px-12">
+                <div className="bg-white flex gap-4 pt-2 px-12">
                     <div className="w-54 h-48 flex items-center relative -mt-26 p-1">
                         <div className="inline-block rounded-full border-4 border-white shadow-lg">
-                            <img src="jake.jpg" alt="Profile" className="w-full h-auto rounded-full border-4 border-blue-600" />
+                            <img src="MyPic.png" alt="Profile" className="w-full h-auto rounded-full border-4 border-blue-600" />
                         </div>
                             {/* green dot  */}
                             <span className="h-5 w-5 bg-green-500 rounded-full absolute bottom-7 right-7 border-2 border-white"></span>
