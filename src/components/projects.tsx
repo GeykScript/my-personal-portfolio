@@ -37,7 +37,7 @@ return (
     <div className="border border-gray-200 rounded-lg flex flex-col p-6 shadow-sm">
       {/* Header */}
         <div className="flex justify-between items-center">
-            <h3 className="flex items-center font-semibold text-gray-800 text-lg">
+            <h3 className="flex items-center font-bold text-gray-800 text-lg">
                 <span className="material-icons scale-80">folder_copy</span>
                 Projects
             </h3>

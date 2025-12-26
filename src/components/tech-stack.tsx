@@ -115,10 +115,11 @@ export default function TechStack() {
 
   const options = ["All", "Frontend", "Backend", "Tools"];
 
-  return (
-    <div className="border border-gray-200 rounded-lg flex flex-col p-6 shadow-sm relative">
+  return ( 
+      // border border-gray-200 shadow-sm 
+    <div className=" rounded-lg flex flex-col p-6 relative">
       <div className="flex justify-between items-center">
-        <h3 className="flex items-center font-semibold text-gray-800 text-lg">
+        <h3 className="flex items-center font-bold text-gray-800 text-lg">
           <span className="material-icons scale-80 mr-1">layers</span>
           Tech Stack
         </h3>
@@ -128,7 +129,7 @@ export default function TechStack() {
           <button
             type="button"
             onClick={() => setOpen(!open)}
-            className="flex items-center justify-between text-sm px-3 py-1 border rounded-md focus:outline-none border-gray-300 hover:cursor-pointer hover:border-gray-400"
+            className="flex items-center justify-between text-sm px-3 py-1 border rounded-md focus:outline-none border-gray-600 hover:cursor-pointer "
             >
             {filter}
             <span className="material-icons scale-70">

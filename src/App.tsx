@@ -17,7 +17,7 @@ function App() {
                   <TechStack />
                   <Projects />
             </div>
-            <div className="col-span-1 grid grid-rows-[0.5fr_1fr_1fr] gap-2 ">
+            <div className="col-span-1 grid grid-rows-[0.4fr_1fr_0.7fr] gap-2 ">
                 <Education />
                 <Experience />
                 <Certifications />                                        

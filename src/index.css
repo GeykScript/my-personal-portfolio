@@ -1,2 +1,24 @@
 @import "tailwindcss";
 @import 'material-icons/iconfont/material-icons.css';
+
+/* global.css or index.css */
+.scrollbar-design::-webkit-scrollbar {
+    width: 4px;
+    /* scrollbar width */
+}
+
+.scrollbar-design::-webkit-scrollbar-track {
+    background: transparent;
+    /* track color */
+}
+
+.scrollbar-design::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    /* gray-300 */
+    border-radius: 9999px;
+}
+
+.scrollbar-design::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af;
+    /* gray-400 */
+}
