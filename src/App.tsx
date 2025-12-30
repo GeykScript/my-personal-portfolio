@@ -12,7 +12,7 @@ function App() {
           <Profile />
 
           <div className="col-span-12 grid grid-cols-3  w-full px-36 gap-2 mt-2 mb-4">
-            <div className="col-span-2 flex flex-col gap-2">
+            <div className="col-span-2 grid grid-rows-[0.3fr_0.4fr_1fr] gap-2">
                   <About />
                   <TechStack />
                   <Projects />

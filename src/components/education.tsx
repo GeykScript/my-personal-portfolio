@@ -14,7 +14,7 @@ export default function Education() {
                     <h3 className="font-bold text-gray-600 text-sm ">Bicol University</h3>
                 </div>
                 <p className="text-sm text-gray-500 flex items-center gap-1"><span className="material-icons scale-70 text-gray-500">calendar_month</span>
-                   4th Year Undergraduate, Expected 2026</p>
+                   2022-Present</p>
             </div>
         </div>
     );

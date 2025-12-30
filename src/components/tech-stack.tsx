@@ -102,6 +102,12 @@ const techStack = [
     src: "https://img.shields.io/badge/canva-%238A2BE2.svg?style=for-the-badge&logo=chai&logoColor=white",
     alt: "Canva",
   },
+  {
+    id: "vite",
+    category: ["Frontend", "Tools"],
+    src: "https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white",
+    alt: "Vite",
+  },
 ];
 
 export default function TechStack() {
@@ -129,7 +135,7 @@ export default function TechStack() {
           <button
             type="button"
             onClick={() => setOpen(!open)}
-            className="flex items-center justify-between text-sm px-3 py-1 border rounded-md focus:outline-none border-gray-600 hover:cursor-pointer "
+            className="flex items-center justify-between text-sm px-3 py-1 border rounded-md focus:outline-none border-gray-600 hover:border-sky-600 hover:text-sky-600 hover:cursor-pointer "
             >
             {filter}
             <span className="material-icons scale-70">
@@ -148,7 +154,7 @@ export default function TechStack() {
                     setFilter(option);
                     setOpen(false);
                   }}
-                  className="w-full text-left px-3 py-2 text-sm hover:bg-gray-100"
+                  className="w-full text-left px-3 py-2 text-sm hover:bg-sky-100 hover:cursor-pointer"
                 >
                   {option}
                 </button>
