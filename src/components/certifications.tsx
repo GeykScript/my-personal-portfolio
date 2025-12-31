@@ -6,7 +6,7 @@
         image: "/certificate/udemy-web.jpg", 
         description: (
         <>
-            Certificate of Completion from <b>Udemy</b>, issued on June 15, 2025, for completing "The Complete Full-Stack Web Development Bootcamp."
+            Certificate of Completion from <span className='font-semibold group-hover:text-sky-600'>Udemy</span>, issued on June 15, 2025, for completing <span className='group-hover:underline underline-offset-3 group-hover:text-sky-600'>"The Complete Full-Stack Web Development Bootcamp."</span>
         </>
         )
     },
@@ -15,7 +15,7 @@
         image: "/certificate/freecodecamp-web.png", 
         description: (
         <>
-            Developer Certification from <b>freeCodeCamp</b>, issued on June 30, 2023, for completing approximately 300 hours of coursework.
+            Developer Certification from <span className='font-semibold group-hover:text-sky-600'>freeCodeCamp</span>, issued on June 30, 2023, for <span className='group-hover:underline underline-offset-3 group-hover:text-sky-600'> Completing approximately 300 hours of coursework.</span>
         </>
         )
     },
@@ -24,7 +24,7 @@
         image: "/certificate/c-intermediate.png",
         description: (
         <>
-            Course Certificate from <b>Sololearn</b>, issued on June 22, 2023, for completing the intermediate course in C programming.
+            Course Certificate from <span className='font-semibold group-hover:text-sky-600'>Sololearn</span>, issued on June 22, 2023, for <span className='group-hover:underline underline-offset-3 group-hover:text-sky-600'>Completing the intermediate course in C programming.</span>
         </>
         )
     },
@@ -33,7 +33,7 @@
         image: "/certificate/learn-java.jpg",
         description: (
         <>
-            Certificate of Completion from <b>Udemy</b>, issued on June 18, 2023, for completing "Learn & Understand Java From Scratch."
+            Certificate of Completion from <span className='font-semibold group-hover:text-sky-600'>Udemy</span>, issued on June 18, 2023, for completing <span className='group-hover:underline underline-offset-3 group-hover:text-sky-600'>"Learn & Understand Java From Scratch."</span>
         </>
         )
     },
@@ -42,7 +42,7 @@
         image: "/certificate/intro-to-java.jpg",
         description: (
         <>
-            Course Certificate from <b>Sololearn</b>, issued on June 19, 2023, for completing the introductory course in Java programming.
+            Course Certificate from <span className='font-semibold group-hover:text-sky-600'>Sololearn</span>, issued on June 19, 2023, for <span className='group-hover:underline underline-offset-3 group-hover:text-sky-600'>Completing the introductory course in Java programming.</span>
         </>
         )
     }
@@ -64,25 +64,25 @@
 
     return (
         <>
-        <div className="border border-gray-200 rounded-lg flex flex-col p-4 shadow-sm relative">
+        <div className="border border-gray-200 rounded-lg flex flex-col justify-center p-4 shadow-sm relative">
             <div className="flex justify-between items-center">
             <h3 className="flex items-center font-bold text-gray-800 text-lg">
                 <span className="material-icons scale-80 mr-1">workspace_premium</span>
                 Certifications
             </h3>
             </div>
-            <div className="mt-3 pt-3 border-t border-gray-200 px-2 gap-4 flex flex-col overflow-y-auto max-h-49 scrollbar-design pb-2">
+            <div className="mt-3 pt-3 border-t border-gray-200  px-1 gap-4 flex flex-col overflow-y-auto max-h-48 scrollbar-design pb-2">
             {certificates.map((cert, index) => (
-                <div key={index} className="flex flex-col gap-1 ">
-                <div className="flex items-start justify-between">
-                    <h4 className="font-bold text-gray-700 text-sm">
+                <div key={index} className="flex flex-col gap-1 group cursor-default p-1 rounded hover:bg-sky-50 hover:cursor-pointer"   onClick={() => handleOpenImage(cert.image)}>
+                <div className="flex items-start justify-between ">
+                    <h4 className="font-bold text-gray-700 group-hover:text-sky-600 text-sm">
                     {cert.title}
                     </h4>
                     {/* 3. Update button to trigger the open function */}
                     <button 
                     type="button" 
                     onClick={() => handleOpenImage(cert.image)}
-                    className="hover:text-sky-600 text-gray-700 hover:cursor-pointer transition-colors"
+                    className="group-hover:text-sky-600 text-gray-700 hover:cursor-pointer transition-colors"
                     >
                     <span className="material-icons ">fullscreen</span>
                     </button>

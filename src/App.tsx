@@ -10,14 +10,14 @@ function App() {
   return (
       <div className="grid grid-cols-12 gap-1">
           <Profile />
-
-          <div className="col-span-12 grid grid-cols-3  w-full px-36 gap-2 mt-2 mb-4">
-            <div className="col-span-2 grid grid-rows-[0.3fr_0.4fr_1fr] gap-2">
+          <div className="col-span-12 grid grid-cols-3  w-full px-4  md:px-12 lg:px-30 gap-6 sm:gap-2 mt-2 mb-4">
+            <div className="col-span-3 2xl:col-span-2 grid grid-rows-[0.5fr_0.5fr_1fr] gap-4 sm:gap-2">
                   <About />
                   <TechStack />
                   <Projects />
+
             </div>
-            <div className="col-span-1 grid grid-rows-[0.4fr_1fr_0.7fr] gap-2 ">
+            <div className="col-span-3 2xl:col-span-1 grid grid-rows-[0.4fr_1fr_0.6fr] gap-4 sm:gap-2 ">
                 <Education />
                 <Experience />
                 <Certifications />                                        

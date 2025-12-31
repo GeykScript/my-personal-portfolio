@@ -165,13 +165,13 @@ export default function TechStack() {
       </div>
 
       {/* Tech badges */}
-      <div className="flex flex-wrap gap-2 mt-4">
+      <div className="flex flex-wrap gap-3  mt-6">
         {filteredTech.map((tech) => (
           <img
             key={tech.id}
             src={tech.src}
             alt={tech.alt}
-            className="rounded-sm"
+            className="rounded-sm "
           />
         ))}
       </div>
