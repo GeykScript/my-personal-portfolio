@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 const techStack = [
   // Frontend
   {
@@ -111,6 +112,7 @@ const techStack = [
 ];
 
 export default function TechStack() {
+  
   const [filter, setFilter] = useState("All");
   const [open, setOpen] = useState(false);
 

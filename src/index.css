@@ -22,19 +22,18 @@
                 transform: translateX(0);
             }
         }
-                   --animate-elastic: elastic 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        --animate-elastic: elastic 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         
-                   @keyframes elastic {
-                       0% {
-                           opacity: 0;
-                           transform: translateX(30px);
-                       }
-        
-                       100% {
-                           opacity: 1;
-                           transform: translateX(0);
-                       }
-                   }
+        @keyframes elastic {
+            0% {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 }
 
 
@@ -70,4 +69,29 @@
 .scrollbar-design::-webkit-scrollbar-thumb:hover {
     background-color: #9ca3af;
     /* gray-400 */
+}
+
+/* In your CSS file */
+.animate-gradient {
+    background: linear-gradient(280deg,#e7760c, #009BDE, #091f9b, #000000, #ff0000);
+    background-size: 400% 400%;
+    animation: gradient-move 7s ease infinite;
+}
+
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.text-style {
+    font-family:'Typewriter', monospace;
 }

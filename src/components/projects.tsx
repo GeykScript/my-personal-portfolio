@@ -172,13 +172,10 @@
     useEffect(() => {
         const handleResize = () => {
         if (window.innerWidth >= 1024) {
-            // Large screens (lg)
             setItemsPerPage(3);
         } else if (window.innerWidth >= 640) {
-            // Medium screens (sm)
             setItemsPerPage(2);
         } else {
-            // Small screens
             setItemsPerPage(1);
         }
         };
@@ -186,17 +183,15 @@
         // Set initial value
         handleResize();
 
-        // Add event listener
         window.addEventListener("resize", handleResize);
 
-        // Cleanup
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
     // Calculate maximum index based on current itemsPerPage
     const maxIndex = Math.max(projects.length - itemsPerPage, 0);
 
-    // Safety: If window resize leaves index out of bounds, fix it
+    // Ensure index is within bounds when itemsPerPage changes
     useEffect(() => {
         if (index > maxIndex) {
             setIndex(maxIndex);
@@ -205,160 +200,161 @@
 
     return (
         <div className="border border-gray-200 dark:border-gray-800/30 rounded-lg flex flex-col p-6  shadow-sm dark:bg-gray-700/10 dark:shadow-gray-100/10">
-        {/* Header */}
-        <div className="flex justify-between items-center">
-            <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
-            <span className="material-icons scale-80">folder_copy</span>
-            Projects
-            </h3>
+            {/* Header */}
+            <div className="flex justify-between items-center">
+                <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
+                <span className="material-icons scale-80">folder_copy</span>
+                Projects
+                </h3>
 
-            {/* Controls */}
-            <div className="flex gap-1 px-2">
-            <button
-                type="button"
-                onClick={() => setIndex((i) => Math.max(i - 1, 0))}
-                disabled={index === 0}
-                className="flex items-center justify-center border rounded p-1 disabled:opacity-40 hover:cursor-pointer  hover:border-sky-600 hover:text-sky-600 dark:text-white"
-            >
-                <span className="material-icons scale-70">keyboard_arrow_left</span>
-            </button>
-
-            <button
-                type="button"
-                onClick={() => setIndex((i) => Math.min(i + 1, maxIndex))}
-                disabled={index >= maxIndex}
-                className="flex items-center justify-center border rounded p-1 disabled:opacity-40 hover:cursor-pointer hover:border-sky-600 hover:text-sky-600 dark:text-white"
-            >
-                <span className="material-icons scale-70">
-                keyboard_arrow_right
-                </span>
-            </button>
-            </div>
-        </div>
-
-        {/* Slider */}
-       
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6  animate-elastic" key={index}>
-            
-            {projects.slice(index, index + itemsPerPage).map((p, i) => (
-                <div
-                    key={i}
-                    className="p-3 rounded-md shadow-md border border-gray-200 dark:border-gray-800/30 hover:scale-102 transition-transform  dark:shadow-gray-100/10 "
-                >
-                <div className="h-40">
-                {p.image && (
-                    <img
-                    src={p.image}
-                    alt={p.title}
-                    className="w-full h-full object-cover hover:object-scale-down  rounded-sm shadow-md"
-                    />
-                )}
-                </div>
-                <h2 className="px-2  mt-5 font-bold text-md text-gray-700 dark:text-white">{p.title}</h2>
-                <p className="py-1 px-2 text-md mt-2 dark:text-gray-200">{p.desc}</p>
-
-                <div className="flex gap-2 px-1 mt-4 py-2 ">
-                    {p.demo &&
-                    (isYouTubeEmbed(p.demo) ? (
-                        // if video
-                        <button
-                        onClick={() => setActiveProject(p)}
-                        className="flex items-center hover:text-sky-600 text-sm dark:text-white"
-                        >
-                        <span className="material-icons scale-70">launch</span>
-                        Demo
-                        </button>
-                    ) : (
-                        // if not video
-                        <a
-                        href={p.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center hover:text-sky-600 text-sm dark:text-white"
-                        >
-                        <span className="material-icons scale-70">launch</span>
-                        Demo
-                        </a>
-                    ))}
-
-                    {/* source code  */}
-                    <a
-                    href={p.code}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center hover:text-sky-600 text-sm dark:text-white"
+                {/* Controls */}
+                <div className="flex gap-1 px-2">
+                    <button
+                        type="button"
+                        onClick={() => setIndex((i) => Math.max(i - 1, 0))}
+                        disabled={index === 0}
+                        className="flex items-center justify-center border rounded p-1 disabled:opacity-40 hover:cursor-pointer  hover:border-sky-600 hover:text-sky-600 dark:text-white"
                     >
-                    <span className="material-icons scale-70">code</span>
-                    Code
-                    </a>
+                        <span className="material-icons scale-70">keyboard_arrow_left</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        onClick={() => setIndex((i) => Math.min(i + 1, maxIndex))}
+                        disabled={index >= maxIndex}
+                        className="flex items-center justify-center border rounded p-1 disabled:opacity-40 hover:cursor-pointer hover:border-sky-600 hover:text-sky-600 dark:text-white"
+                    >
+                        <span className="material-icons scale-70">
+                        keyboard_arrow_right
+                        </span>
+                    </button>
                 </div>
             </div>
-            ))}
-        </div>
 
-        {/* Modal */}
-        {activeProject && (
-            <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 "
-            onClick={() => setActiveProject(null)}
-            >
-            <div
-                className="bg-white dark:bg-black rounded-lg w-[90%] max-w-4xl p-4 max-h-[90vh] overflow-y-auto scrollbar-none"
-                onClick={(e) => e.stopPropagation()}
-            >
-                {/* // video section */}
-                <div className="relative pt-[56.25%]">
-                <iframe
-                    className="absolute inset-0 w-full h-full rounded-md"
-                    src={`${activeProject.demo}?autoplay=1&mute=1`}
-                    allow="autoplay; fullscreen"
-                    allowFullScreen
-                    title={`${activeProject.title} demo video`}
-                />
-                </div>
-
-                {/* tools used section */}
-                {activeProject.techStack && (
-                <div className="mt-4 px-6 ">
-                    <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
-                    <span className="material-icons scale-80 mr-1">layers</span>
-                    Tools
-                    </h3>
-
-                    <div className="flex flex-wrap gap-2 mt-4">
-                    {activeProject.techStack.map((tech, i) => (
-                        <img
+            {/* Slider */}
+       
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6  animate-elastic" key={index}>
+                
+                {projects.slice(index, index + itemsPerPage).map((p, i) => (
+                    <div
                         key={i}
-                        src={tech}
-                        alt="tech stack badge"
-                        className="h-6"
-                        />
-                    ))}
-                    </div>
+                        className="p-3 rounded-md shadow-md border border-gray-200 dark:border-gray-800/30 hover:scale-102 transition-transform  dark:shadow-gray-100/10 "
+                    >
+                        <div className="h-40">
+                        {p.image && (
+                            <img
+                            src={p.image}
+                            alt={p.title}
+                            className="w-full h-full object-cover hover:object-scale-down  rounded-sm shadow-md"
+                            />
+                        )}
+                        </div>
+                        <h2 className="px-2  mt-5 font-bold text-md text-gray-700 dark:text-white">{p.title}</h2>
+                        <p className="py-1 px-2 text-md mt-2 dark:text-gray-200">{p.desc}</p>
+
+                        {/* // Demo and Code links */}
+                        <div className="flex gap-2 px-1 mt-4 py-2 ">
+                            {p.demo &&
+                                (isYouTubeEmbed(p.demo) ? (
+                                    // if video
+                                    <button
+                                    onClick={() => setActiveProject(p)}
+                                    className="flex items-center hover:text-sky-600 text-sm dark:text-white"
+                                    >
+                                    <span className="material-icons scale-70">launch</span>
+                                    Demo
+                                    </button>
+                                ) : (
+                                    // if not video
+                                    <a
+                                    href={p.demo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center hover:text-sky-600 text-sm dark:text-white"
+                                    >
+                                    <span className="material-icons scale-70">launch</span>
+                                    Demo
+                                    </a>
+                                ))}
+
+                                {/* source code  */}
+                                <a
+                                href={p.code}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center hover:text-sky-600 text-sm dark:text-white"
+                                >
+                                <span className="material-icons scale-70">code</span>
+                                Code
+                                </a>
+                        </div>
                 </div>
-                )}
-                {activeProject.description && (
-                    <div className="mt-6 px-6">
-                         <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
-                            <span className="material-icons scale-80 mr-1">info</span>
-                            Details
-                        </h3>
-                        <div className="flex flex-col mt-4 text-gray-900 dark:text-gray-200 p-4 bg-gray-50 rounded-md dark:bg-gray-800/30 shadow-sm dark:shadow-gray-100/10 ">
-                        {activeProject.description}
+                ))}
+            </div>
+
+            {/* Modal */}
+            {activeProject && (
+                <div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 "
+                onClick={() => setActiveProject(null)}
+                >
+                    <div
+                        className="bg-white dark:bg-black rounded-lg w-[90%] max-w-4xl p-4 max-h-[90vh] overflow-y-auto scrollbar-none"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* // video section */}
+                        <div className="relative pt-[56.25%]">
+                            <iframe
+                                className="absolute inset-0 w-full h-full rounded-md"
+                                src={`${activeProject.demo}?autoplay=1&mute=1`}
+                                allow="autoplay; fullscreen"
+                                allowFullScreen
+                                title={`${activeProject.title} demo video`}
+                            />
+                        </div>
+
+                        {/* tools used section */}
+                        {activeProject.techStack && (
+                        <div className="mt-4 px-6 ">
+                            <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
+                            <span className="material-icons scale-80 mr-1">layers</span>
+                            Tools
+                            </h3>
+
+                            <div className="flex flex-wrap gap-2 mt-4">
+                            {activeProject.techStack.map((tech, i) => (
+                                <img
+                                key={i}
+                                src={tech}
+                                alt="tech stack badge"
+                                className="h-6"
+                                />
+                            ))}
+                            </div>
+                        </div>
+                        )}
+                        {activeProject.description && (
+                            <div className="mt-6 px-6">
+                                <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
+                                    <span className="material-icons scale-80 mr-1">info</span>
+                                    Details
+                                </h3>
+                                <div className="flex flex-col mt-4 text-gray-900 dark:text-gray-200 p-4 bg-gray-50 rounded-md dark:bg-gray-800/30 shadow-sm dark:shadow-gray-100/10 ">
+                                {activeProject.description}
+                                </div>
+                            </div>
+                        )}  
+                        <div className="mt-4 flex justify-end">
+                            <button
+                                onClick={() => setActiveProject(null)}
+                                className="px-4 py-2 text-sm rounded-md bg-sky-600 text-white hover:bg-sky-700"
+                            >
+                                Close
+                            </button>
                         </div>
                     </div>
-                )}  
-                <div className="mt-4 flex justify-end">
-                <button
-                    onClick={() => setActiveProject(null)}
-                    className="px-4 py-2 text-sm rounded-md bg-sky-600 text-white hover:bg-sky-700"
-                >
-                    Close
-                </button>
                 </div>
-            </div>
-            </div>
-        )}
+            )}
         </div>
     );
     }

@@ -1,5 +1,6 @@
 import DarkMode from "./darkmode";
 import { useState } from "react";
+import { TypeAnimation } from 'react-type-animation';
 
 
 export default function profile() {
@@ -8,14 +9,30 @@ export default function profile() {
     return (
         <div className="col-span-12 md:px-12 lg:px-30 h-full w-full  ">
             <div className="relative">
-                <div className="bg-gradient-to-r from-black to-gray-600 dark:from-black/10 dark:to-gray-600/10 items-center justify-center h-32 flex rounded-b-sm shadow-lg shadow-black/30 dark:shadow-gray-200/10">
-                    <h1 className="text-white text-2xl xl:text-3xl font-bold ">Web Developer</h1>
+                <div className="animate-gradient dark:from-black/10 dark:to-gray-600/10 items-center justify-center h-32 flex rounded-b-sm shadow-lg shadow-black/30 dark:shadow-gray-200/10">
+                    <div className="text-center">
+                        <h3 className="text-white text-md text-style">Aspiring to be a</h3>
+                    <TypeAnimation
+                        sequence={[
+                            'Web Developer',
+                            1500, 
+                            'UI/UX Designer',
+                            1500,
+                            'Data Analyst/Engineer',
+                            1500
+                        ]}
+                        wrapper="h1"
+                        speed={50}
+                        className="text-white text-2xl xl:text-4xl text-style font-bold"
+                        repeat={Infinity}
+                        />
+                    </div>
                 </div>
 
                 {/* Profile Section */}
                 <div className="flex xl:flex-row flex-col gap-4 pt-2 px-6  xl:px-12">
                     {/* picture  */}
-                    <div className="h-34 w-34 sm:h-40 sm:w-40 xl:w-54 xl:h-48 flex items-center relative -mt-14 sm:-mt-26 p-1">
+                    <div className="h-34 w-34 sm:h-40 sm:w-40 xl:w-54 xl:h-48 flex items-center relative -mt-12 sm:-mt-26 p-1">
                         <div className="inline-block rounded-full border-4 border-white dark:border-gray-900 shadow-lg">
                             <img src="MyPic.png" alt="Profile" className="w-full h-auto rounded-full border-4 border-blue-600" />
                         </div>
@@ -58,10 +75,9 @@ export default function profile() {
                                         <span className="material-icons dark:text-white text-gray-900 scale-70">close</span>
                                     </button>
                                 </div>
-                          
                                 <h2 className="text-xl text-start dark:text-white text-gray-800 font-bold mb-2 px-6">Get in Touch</h2>
                                 <div className="px-7 flex flex-col  ">
-                                <hr className="mb-4 dark:bg-white bg-gray-500" />
+                                    <hr className="mb-4 dark:bg-white bg-gray-500" />
                                     <p className="dark:text-white">Call or Message me on:</p>
                                     <div className="flex flex-col mt-2 ">
                                         <div className="flex item-center gap-2  "> 
@@ -98,8 +114,7 @@ export default function profile() {
                                                 <img src="https://img.shields.io/badge/instagram-%23FF0069.svg?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" className="w-full rounded-md" />
                                             </a>
                                         </div>
-                                    </div>
-                                        
+                                    </div>    
                                 </div>
                                 
                             </div>                           
