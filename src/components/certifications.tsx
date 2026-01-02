@@ -64,30 +64,30 @@
 
     return (
         <>
-        <div className="border border-gray-200 rounded-lg flex flex-col justify-center p-4 shadow-sm relative">
+        <div className="border border-gray-200 rounded-lg flex flex-col justify-center p-4 shadow-sm relative  dark:border-gray-800/30 dark:bg-gray-700/10 dark:shadow-gray-100/10 ">
             <div className="flex justify-between items-center">
-            <h3 className="flex items-center font-bold text-gray-800 text-lg">
+            <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
                 <span className="material-icons scale-80 mr-1">workspace_premium</span>
                 Certifications
             </h3>
             </div>
             <div className="mt-3 pt-3 border-t border-gray-200  px-1 gap-4 flex flex-col overflow-y-auto max-h-48 scrollbar-design pb-2">
             {certificates.map((cert, index) => (
-                <div key={index} className="flex flex-col gap-1 group cursor-default p-1 rounded hover:bg-sky-50 hover:cursor-pointer"   onClick={() => handleOpenImage(cert.image)}>
+                <div key={index} className="flex flex-col gap-1 group cursor-default p-1 rounded hover:bg-sky-50 dark:hover:bg-sky-700/10 hover:cursor-pointer"   onClick={() => handleOpenImage(cert.image)}>
                 <div className="flex items-start justify-between ">
-                    <h4 className="font-bold text-gray-700 group-hover:text-sky-600 text-sm">
+                    <h4 className="font-bold text-gray-700 dark:text-gray-400 group-hover:text-sky-600 text-sm">
                     {cert.title}
                     </h4>
                     {/* 3. Update button to trigger the open function */}
                     <button 
                     type="button" 
                     onClick={() => handleOpenImage(cert.image)}
-                    className="group-hover:text-sky-600 text-gray-700 hover:cursor-pointer transition-colors"
+                    className="group-hover:text-sky-600 text-gray-700 dark:text-gray-400 hover:cursor-pointer transition-colors"
                     >
                     <span className="material-icons ">fullscreen</span>
                     </button>
                 </div>
-                <p className="text-xs text-gray-600 leading-relaxed">{cert.description}</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">{cert.description}</p>
                 </div>
             ))}
             </div>

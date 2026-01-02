@@ -2,6 +2,8 @@
 @import 'material-icons/iconfont/material-icons.css';
 
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     --breakpoint-res: 1403px;
     /* Define the sliding animation */

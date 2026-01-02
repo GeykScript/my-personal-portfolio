@@ -125,7 +125,7 @@ export default function TechStack() {
       // border border-gray-200 shadow-sm 
     <div className=" rounded-lg flex flex-col p-6 relative">
       <div className="flex justify-between items-center">
-        <h3 className="flex items-center font-bold text-gray-800 text-lg">
+        <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
           <span className="material-icons scale-80 mr-1">layers</span>
           Tech Stack
         </h3>
@@ -135,7 +135,7 @@ export default function TechStack() {
           <button
             type="button"
             onClick={() => setOpen(!open)}
-            className="flex items-center justify-between text-sm px-3 py-1 border rounded-md focus:outline-none border-gray-600 hover:border-sky-600 hover:text-sky-600 hover:cursor-pointer "
+            className="flex items-center justify-between text-sm px-3 py-1 border rounded-md focus:outline-none border-gray-600 dark:border-gray-300 dark:text-gray-300 hover:border-sky-600 hover:text-sky-600 hover:cursor-pointer "
             >
             {filter}
             <span className="material-icons scale-70">
@@ -145,7 +145,7 @@ export default function TechStack() {
 
 
           {open && (
-            <div className="absolute right-0 mt-1 w-32 bg-white border border-gray-300 rounded-md shadow-lg z-10">
+            <div className="absolute right-0 mt-1 w-32 bg-white border border-gray-300 rounded-md shadow-lg z-10 dark:bg-gray-100 dark:border-gray-900 dark:text-black" >
               {options.map((option) => (
                 <button
                   type="button"
@@ -154,7 +154,7 @@ export default function TechStack() {
                     setFilter(option);
                     setOpen(false);
                   }}
-                  className="w-full text-left px-3 py-2 text-sm hover:bg-sky-100 hover:cursor-pointer"
+                  className="w-full text-left px-3 py-2 text-sm hover:bg-sky-100 dark:hover:bg-sky-500/50 hover:cursor-pointer"
                 >
                   {option}
                 </button>
@@ -165,7 +165,7 @@ export default function TechStack() {
       </div>
 
       {/* Tech badges */}
-      <div className="flex flex-wrap gap-3  mt-6">
+      <div className="flex flex-wrap gap-3  mt-6 animate-elastic duration-300">
         {filteredTech.map((tech) => (
           <img
             key={tech.id}

@@ -23,9 +23,9 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <div className="border border-gray-200 rounded-lg flex flex-col justify-center p-4 shadow-sm">
+    <div className="border border-gray-100 rounded-lg flex flex-col justify-center p-4 shadow-sm dark:bg-gray-700/10 dark:shadow-gray-100/10   dark:border-gray-800/30">
         <div className="flex justify-between items-center">
-            <h3 className="flex items-center font-bold text-gray-800 text-lg">
+            <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
             <span className="material-icons scale-90 mr-1">cases</span>
             Experience
             </h3>
@@ -50,7 +50,7 @@ export default function Experience() {
     >
       {/* Timeline Inner Dot (timeline2) */}
       <div 
-        className="w-3 h-3 bg-gray-500 rounded-full shrink-0 
+        className="w-3 h-3 bg-gray-700 rounded-full shrink-0 
                    transition-colors duration-300
                    group-hover:bg-sky-500" 
         id="timeline2"
@@ -74,14 +74,14 @@ export default function Experience() {
       
       {/* Title & Project */}
       <h4 
-        className="font-bold text-gray-700 text-sm 
+        className="font-bold text-gray-700 dark:text-gray-400 text-sm 
                    transition-colors duration-300
                    group-hover:text-sky-600" 
         id="title"
       >
         {exp.title} <br />
         <span 
-          className="font-semibold text-gray-600 
+          className="font-semibold text-gray-600 dark:text-gray-300
                      transition-colors duration-300
                      group-hover:text-sky-500" 
           id="project"
@@ -92,9 +92,9 @@ export default function Experience() {
 
       {/* Year Badge */}
       <span 
-        className="text-sm font-bold text-gray-500 py-1 px-4 border border-gray-200 rounded whitespace-nowrap shadow-sm 
+        className="text-sm font-bold text-gray-500 dark:text-gray-400 py-1 px-4 border border-gray-200 rounded whitespace-nowrap shadow-sm 
                    transition-all duration-300
-                   group-hover:text-sky-600 group-hover:border-sky-200 group-hover:bg-sky-50 group-hover:shadow-md" 
+                   group-hover:text-sky-600 group-hover:border-sky-200 dark:group-hover:bg-black/10 group-hover:bg-sky-50 group-hover:shadow-md" 
         id="year"
       >
         {exp.year}
@@ -102,7 +102,7 @@ export default function Experience() {
     </div>
 
     {/* Description */}
-    <p className="text-xs text-gray-600 leading-relaxed">
+    <p className="text-xs text-gray-600 dark:text-gray-50 leading-relaxed">
       {exp.description}
     </p>
   </div>

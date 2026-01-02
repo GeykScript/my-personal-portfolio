@@ -6,8 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jervy Jake Morales</title>
   </head>
-  <body class="bg-gray-50">
+  <body class="">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+  const theme =
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+  if (theme) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+</script>
+
   </body>
 </html>

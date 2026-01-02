@@ -204,10 +204,10 @@
     }, [itemsPerPage, maxIndex, index]);
 
     return (
-        <div className="border border-gray-200 rounded-lg flex flex-col p-6  shadow-sm">
+        <div className="border border-gray-200 dark:border-gray-800/30 rounded-lg flex flex-col p-6  shadow-sm dark:bg-gray-700/10 dark:shadow-gray-100/10">
         {/* Header */}
         <div className="flex justify-between items-center">
-            <h3 className="flex items-center font-bold text-gray-800 text-lg">
+            <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
             <span className="material-icons scale-80">folder_copy</span>
             Projects
             </h3>
@@ -218,7 +218,7 @@
                 type="button"
                 onClick={() => setIndex((i) => Math.max(i - 1, 0))}
                 disabled={index === 0}
-                className="flex items-center justify-center border rounded p-1 disabled:opacity-40 hover:cursor-pointer  hover:border-sky-600 hover:text-sky-600"
+                className="flex items-center justify-center border rounded p-1 disabled:opacity-40 hover:cursor-pointer  hover:border-sky-600 hover:text-sky-600 dark:text-white"
             >
                 <span className="material-icons scale-70">keyboard_arrow_left</span>
             </button>
@@ -227,7 +227,7 @@
                 type="button"
                 onClick={() => setIndex((i) => Math.min(i + 1, maxIndex))}
                 disabled={index >= maxIndex}
-                className="flex items-center justify-center border rounded p-1 disabled:opacity-40 hover:cursor-pointer hover:border-sky-600 hover:text-sky-600"
+                className="flex items-center justify-center border rounded p-1 disabled:opacity-40 hover:cursor-pointer hover:border-sky-600 hover:text-sky-600 dark:text-white"
             >
                 <span className="material-icons scale-70">
                 keyboard_arrow_right
@@ -243,7 +243,7 @@
             {projects.slice(index, index + itemsPerPage).map((p, i) => (
                 <div
                     key={i}
-                    className="p-3 rounded-md shadow-md border border-gray-200 "
+                    className="p-3 rounded-md shadow-md border border-gray-200 dark:border-gray-800/30 hover:scale-102 transition-transform  dark:shadow-gray-100/10 "
                 >
                 <div className="h-40">
                 {p.image && (
@@ -254,8 +254,8 @@
                     />
                 )}
                 </div>
-                <h2 className="px-2  mt-5 font-bold text-md text-gray-700">{p.title}</h2>
-                <p className="py-1 px-2 text-md mt-2">{p.desc}</p>
+                <h2 className="px-2  mt-5 font-bold text-md text-gray-700 dark:text-white">{p.title}</h2>
+                <p className="py-1 px-2 text-md mt-2 dark:text-gray-200">{p.desc}</p>
 
                 <div className="flex gap-2 px-1 mt-4 py-2 ">
                     {p.demo &&
@@ -263,7 +263,7 @@
                         // if video
                         <button
                         onClick={() => setActiveProject(p)}
-                        className="flex items-center hover:text-sky-600 text-sm"
+                        className="flex items-center hover:text-sky-600 text-sm dark:text-white"
                         >
                         <span className="material-icons scale-70">launch</span>
                         Demo
@@ -274,7 +274,7 @@
                         href={p.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center hover:text-sky-600 text-sm"
+                        className="flex items-center hover:text-sky-600 text-sm dark:text-white"
                         >
                         <span className="material-icons scale-70">launch</span>
                         Demo
@@ -286,7 +286,7 @@
                     href={p.code}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center hover:text-sky-600 text-sm"
+                    className="flex items-center hover:text-sky-600 text-sm dark:text-white"
                     >
                     <span className="material-icons scale-70">code</span>
                     Code
@@ -299,11 +299,11 @@
         {/* Modal */}
         {activeProject && (
             <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 "
             onClick={() => setActiveProject(null)}
             >
             <div
-                className="bg-white rounded-lg w-[90%] max-w-4xl p-4 max-h-[90vh] overflow-y-auto scrollbar-none"
+                className="bg-white dark:bg-black rounded-lg w-[90%] max-w-4xl p-4 max-h-[90vh] overflow-y-auto scrollbar-none"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* // video section */}
@@ -320,7 +320,7 @@
                 {/* tools used section */}
                 {activeProject.techStack && (
                 <div className="mt-4 px-6 ">
-                    <h3 className="flex items-center font-bold text-gray-800 text-lg">
+                    <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
                     <span className="material-icons scale-80 mr-1">layers</span>
                     Tools
                     </h3>
@@ -339,11 +339,11 @@
                 )}
                 {activeProject.description && (
                     <div className="mt-6 px-6">
-                         <h3 className="flex items-center font-bold text-gray-800 text-lg">
+                         <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
                             <span className="material-icons scale-80 mr-1">info</span>
                             Details
                         </h3>
-                        <div className="flex flex-col mt-4 text-gray-900">
+                        <div className="flex flex-col mt-4 text-gray-900 dark:text-gray-200 p-4 bg-gray-50 rounded-md dark:bg-gray-800/30 shadow-sm dark:shadow-gray-100/10 ">
                         {activeProject.description}
                         </div>
                     </div>
