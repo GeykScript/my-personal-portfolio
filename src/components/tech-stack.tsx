@@ -173,7 +173,7 @@ export default function TechStack() {
             key={tech.id}
             src={tech.src}
             alt={tech.alt}
-            className="rounded-sm "
+            className="rounded-sm hover:scale-105 transition-transform hover:opacity-90"
           />
         ))}
       </div>

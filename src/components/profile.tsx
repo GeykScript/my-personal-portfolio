@@ -9,7 +9,7 @@ export default function profile() {
     return (
         <div className="col-span-12 md:px-12 lg:px-30 h-full w-full  ">
             <div className="relative">
-                <div className="animate-gradient dark:from-black/10 dark:to-gray-600/10 items-center justify-center h-32 flex rounded-b-sm shadow-lg shadow-black/30 dark:shadow-gray-200/10">
+                <div className="animate-gradient dark:from-black/10 dark:to-gray-600/10 items-center justify-center h-32 flex rounded-b-sm shadow-lg shadow-black/30 dark:shadow-gray-600/40">
                     <div className="text-center">
                         <h3 className="text-white text-md text-style">Aspiring to be a</h3>
                     <TypeAnimation
