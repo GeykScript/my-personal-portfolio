@@ -2,7 +2,7 @@
 
 const experiences = [
   {
-    title: "Full-Stack Web Developer / UI/UX Designer",
+    title: "Full-Stack Web Developer | UI/UX Designer",
     project: "iBiteCare+",
     year: "2025",
     description: "Developed a full-stack web system for Dr. Care Animal Bite Center-Guinobatan."
@@ -14,7 +14,7 @@ const experiences = [
     description: "Built a blog website for a client, themed around Pablo Neruda’s “Your Laughter” poem."
   },
   {
-    title: "Full-Stack Web Developer / UI/UX Designer",
+    title: "Full-Stack Web Developer |UI/UX Designer",
     project: "FurrHUB",
     year: "2025",
     description: "Developed a full-stack web-based E-Commerce platform for pet products and services."
@@ -32,11 +32,11 @@ export default function Experience() {
             </h3>
         </div>
 
-        <div className="mt-3 pt-3  border-t border-gray-200 px-2 flex flex-col overflow-y-auto max-h-96 scrollbar-design pb-2">
+        <div className="mt-3 pt-3  border-t border-gray-200  md:px-2 flex flex-col overflow-y-auto max-h-96 scrollbar-design pb-2">
         {experiences.map((exp, index) => (
           <div 
             key={index} 
-            className="flex gap-4 group cursor-default" 
+            className="flex gap-2 md:gap-4 group cursor-default" 
             id="experience"
             >
           
