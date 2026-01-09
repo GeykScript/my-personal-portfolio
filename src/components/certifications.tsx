@@ -109,49 +109,48 @@
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
             onClick={handleCloseImage}
             >
-            <div className="w-auto max-w-[95vw] max-h-screen flex flex-col items-end relative">
-                
-                {/* Close Button - Only renders when NOT loading */}
-                {!imageLoading && (
-                <button
-                    type="button"
-                    onClick={(e) => {
-                    e.stopPropagation();
-                    handleCloseImage();
-                    }}
-                    className="text-gray-100 bg-none hover:cursor-pointer mb-2"
-                >
-                    <span className="material-icons text-3xl">close</span>
-                </button>
-                )}
+                <div className="w-auto max-w-[95vw] max-h-screen flex flex-col items-end relative">
+                    
+                    {/* Close Button - Only renders when NOT loading */}
+                    {!imageLoading && (
+                    <button
+                        type="button"
+                        onClick={(e) => {
+                        e.stopPropagation();
+                        handleCloseImage();
+                        }}
+                        className="text-gray-100 bg-none hover:cursor-pointer mb-2"
+                    >
+                        <span className="material-icons text-3xl">close</span>
+                    </button>
+                    )}
 
-<div className="relative max-h-[85vh] w-auto max-w-full flex items-center justify-center">
-      
-      {/* Skeleton Loader */}
-      {imageLoading && (
-        <div 
-          className="h-70 w-xl bg-gray-300 dark:bg-gray-600 rounded-md animate-pulse flex items-center justify-center"
-        >
-           {/* Optional: Add a subtle icon inside the skeleton while loading */}
-           <svg className="w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-           </svg>
-        </div>
-      )}
+                    <div className="relative max-h-[85vh] w-auto max-w-full flex items-center justify-center">
+                        
+                        {/* Skeleton Loader */}
+                        {imageLoading && (
+                            <div 
+                            className="h-50 md:h-70 w-xl bg-gray-300 dark:bg-gray-600 rounded-md animate-pulse flex items-center justify-center"
+                            >
+                            <svg className="w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            </div>
+                        )}
 
-      {/* Image */}
-      <img
-        key={selectedImage} 
-        src={selectedImage}
-        alt="Certificate"
-        // Keeps the image in the DOM but hidden until loaded to prevent layout jumps
-        className={`max-h-[85vh] w-auto max-w-full rounded-md shadow-2xl object-contain bg-white transition-opacity duration-300 ${
-          imageLoading ? 'hidden' : 'block'
-        }`}
-        onLoad={() => setImageLoading(false)}
-      />
-</div>
-            </div>
+                        {/* Image */}
+                        <img
+                            key={selectedImage} 
+                            src={selectedImage}
+                            alt="Certificate"
+                            // Keeps the image in the DOM but hidden until loaded to prevent layout jumps
+                            className={`max-h-[85vh] w-auto max-w-full rounded-md shadow-2xl object-contain bg-white transition-opacity duration-300 ${
+                            imageLoading ? 'hidden' : 'block'
+                            }`}
+                            onLoad={() => setImageLoading(false)}
+                        />
+                    </div>
+                </div>
             </div>
         )}
         </>
