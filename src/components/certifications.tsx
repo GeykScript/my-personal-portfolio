@@ -1,4 +1,4 @@
-    import { useEffect, useState } from 'react';
+    import { useState } from 'react';
 
     const certificates = [
     {
@@ -48,101 +48,113 @@
     }
     ];
 
-    export default function Certifications() {
-    // 2. State to track which image is currently clicked
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
-    const [imageLoading, setImageLoading] = useState(true);
+  export default function Certifications() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [imageLoading, setImageLoading] = useState(true);
 
-    const handleOpenImage = (imagePath: string | null) => {
-        if (imagePath) {
-        setImageLoading(true);
-        setSelectedImage(imagePath);
-        }
-    };
-
-    const handleCloseImage = () => {
-        setSelectedImage(null);
-        setImageLoading(true);
-    };
-
-    
-    return (
-        <>
-        <div className="border border-gray-200 rounded-lg flex flex-col justify-center p-4 shadow-sm relative  dark:border-gray-800/30 dark:bg-gray-700/10 dark:shadow-gray-100/10 ">
-            <div className="flex justify-between items-center">
-            <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
-                <span className="material-icons scale-80 mr-1">workspace_premium</span>
-                Certifications
-            </h3>
-            </div>
-            <div className="mt-3 pt-3 border-t border-gray-200  px-1 gap-4 flex flex-col overflow-y-auto max-h-48 scrollbar-design pb-2">
-            {certificates.map((cert, index) => (
-                <div key={index} className="flex flex-col gap-1 group cursor-default p-1 rounded hover:bg-sky-50 dark:hover:bg-sky-700/10 hover:cursor-pointer"   onClick={() => handleOpenImage(cert.image)}>
-                <div className="flex items-start justify-between ">
-                    <h4 className="font-bold text-gray-700 dark:text-gray-400 group-hover:text-sky-600 text-sm">
-                    {cert.title}
-                    </h4>
-                    {/* 3. Update button to trigger the open function */}
-                    <button 
-                    type="button" 
-                    onClick={() => handleOpenImage(cert.image)}
-                    className="group-hover:text-sky-600 text-gray-700 dark:text-gray-400 hover:cursor-pointer transition-colors"
-                    >
-                    <span className="material-icons ">fullscreen</span>
-                    </button>
-                </div>
-                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">{cert.description}</p>
-                </div>
-            ))}
-            </div>
-        </div>
-
-        {/* 4. The Modal (Overlay) - Only shows if selectedImage is not null */}
-        {selectedImage && (
-            <div 
-                className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4" 
-                onClick={handleCloseImage}
-                >
-                <div className="w-auto max-w-[95vw] max-h-screen flex flex-col items-end relative">
-                    
-                    {!imageLoading && (
-                                <button
-                                    type="button"
-                                    onClick={(e) => {
-                                    e.stopPropagation(); // Prevent closing the modal when clicking the button specifically
-                                    handleCloseImage();
-                                    }}
-                                    className="text-gray-100 bg-none hover:cursor-pointer mb-2" // Added mb-2 for spacing
-                                >
-                                    <span className="material-icons text-3xl">close</span>
-                                </button>
-                                )}
-                    
-                        {/* Image Wrapper */}
-                    <div className="relative max-h-[85vh] w-auto max-w-full flex items-center justify-center">
-
-                           {/* Skeleton */}
-                        {imageLoading && (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-full h-full bg-gray-300 dark:bg-gray-400 rounded-md animate-pulse"></div>
-                        </div>
-                        )}
-
-
-                        {/* Image */}
-                        <img
-                        src={selectedImage}
-                        alt="Certificate"
-                        className={`max-h-[85vh] w-auto max-w-full rounded-md shadow-2xl object-contain bg-white
-                            transition-opacity duration-300
-                            ${imageLoading ? "opacity-0" : "opacity-100"}
-                        `}
-                        onLoad={() => setImageLoading(false)}
-                        />
-                    </div>
-                </div>
-             </div>
-        )}
-        </>
-    );
+  const handleOpenImage = (imagePath: string | null) => {
+    if (imagePath) {
+      setImageLoading(true); // 1. Reset loading immediately
+      setSelectedImage(imagePath);
     }
+  };
+
+  const handleCloseImage = () => {
+    setSelectedImage(null);
+    setImageLoading(true);
+  };
+
+  return (
+    <>
+      <div className="border border-gray-200 rounded-lg flex flex-col justify-center p-4 shadow-sm relative dark:border-gray-800/30 dark:bg-gray-700/10 dark:shadow-gray-100/10">
+        <div className="flex justify-between items-center">
+          <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
+            <span className="material-icons scale-80 mr-1">workspace_premium</span>
+            Certifications
+          </h3>
+        </div>
+        <div className="mt-3 pt-3 border-t border-gray-200 px-1 gap-4 flex flex-col overflow-y-auto max-h-48 scrollbar-design pb-2">
+          {certificates.map((cert, index) => (
+            <div
+              key={index}
+              className="flex flex-col gap-1 group cursor-default p-1 rounded hover:bg-sky-50 dark:hover:bg-sky-700/10 hover:cursor-pointer"
+              onClick={() => handleOpenImage(cert.image)}
+            >
+              <div className="flex items-start justify-between">
+                <h4 className="font-bold text-gray-700 dark:text-gray-400 group-hover:text-sky-600 text-sm">
+                  {cert.title}
+                </h4>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleOpenImage(cert.image);
+                  }}
+                  className="group-hover:text-sky-600 text-gray-700 dark:text-gray-400 hover:cursor-pointer transition-colors"
+                >
+                  <span className="material-icons">fullscreen</span>
+                </button>
+              </div>
+              <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                {cert.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+          onClick={handleCloseImage}
+        >
+          <div className="w-auto max-w-[95vw] max-h-screen flex flex-col items-end relative">
+            
+            {/* Close Button - Only renders when NOT loading */}
+            {!imageLoading && (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleCloseImage();
+                }}
+                className="text-gray-100 bg-none hover:cursor-pointer mb-2"
+              >
+                <span className="material-icons text-3xl">close</span>
+              </button>
+            )}
+
+            <div className="relative max-h-[85vh] w-auto max-w-full flex items-center justify-center">
+              
+              {/* Skeleton Loader 
+                  2. I added w-64 h-48 to force the modal to have size while loading.
+                  I removed 'absolute inset-0' so it takes up actual physical space.
+              */}
+              {imageLoading && (
+                <div className="w-70 h-60 sm:w-96 sm:h-64 bg-gray-300 dark:bg-gray-600 rounded-md animate-pulse flex items-center justify-center">
+                    {/* Optional spinner icon inside the skeleton */}
+                    <span className="material-icons text-4xl text-gray-400 animate-spin">refresh</span>
+                </div>
+              )}
+
+              {/* Image 
+                  3. Added key={selectedImage}. This forces React to destroy and recreate the img tag.
+                  4. Using 'hidden' vs 'block' instead of opacity ensures the skeleton dictates the size when loading.
+              */}
+              <img
+                key={selectedImage} 
+                src={selectedImage}
+                alt="Certificate"
+                className={`max-h-[85vh] w-auto max-w-full rounded-md shadow-2xl object-contain bg-white transition-opacity duration-300 ${
+                  imageLoading ? 'hidden' : 'block'
+                }`}
+                onLoad={() => setImageLoading(false)}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
