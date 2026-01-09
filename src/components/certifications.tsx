@@ -51,6 +51,7 @@
     export default function Certifications() {
     // 2. State to track which image is currently clicked
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [imageLoading, setImageLoading] = useState(true);
 
     const handleOpenImage = (imagePath: string | null) => {
         if (imagePath) {
@@ -96,28 +97,42 @@
         {/* 4. The Modal (Overlay) - Only shows if selectedImage is not null */}
         {selectedImage && (
             <div 
-    className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4" 
-    onClick={handleCloseImage}
-    >
-    <div className="w-auto max-w-[95vw] max-h-screen flex flex-col items-end relative">
-        
-        {/* Close Button */}
-        <button 
-        onClick={handleCloseImage}
-        className="text-gray-100 bg-none hover:cursor-pointer "
-        >
-        <span className="material-icons text-3xl">close</span>
-        </button>
-        
-        {/* The Image */}
-        <img 
-        src={selectedImage} 
-        alt="Certificate" 
-        className="max-h-[85vh] w-auto max-w-full rounded-md shadow-2xl object-contain bg-white"
-        onClick={(e) => e.stopPropagation()} 
-        />
-    </div>
-    </div>
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4" 
+                onClick={handleCloseImage}
+                >
+                <div className="w-auto max-w-[95vw] max-h-screen flex flex-col items-end relative">
+                    
+                    {/* Close Button */}
+                    <button 
+                    onClick={handleCloseImage}
+                    className="text-gray-100 bg-none hover:cursor-pointer "
+                    >
+                    <span className="material-icons text-3xl">close</span>
+                    </button>
+                    
+                        {/* Image Wrapper */}
+                    <div className="relative max-h-[85vh] w-auto max-w-full flex items-center justify-center">
+
+                        {/* Skeleton */}
+                        {imageLoading && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-full h-full bg-gray-300 dark:bg-gray-400 rounded-md animate-pulse"></div>
+                        </div>
+                        )}
+
+                        {/* Image */}
+                        <img
+                        src={selectedImage}
+                        alt="Certificate"
+                        className={`max-h-[85vh] w-auto max-w-full rounded-md shadow-2xl object-contain bg-white
+                            transition-opacity duration-300
+                            ${imageLoading ? "opacity-0" : "opacity-100"}
+                        `}
+                        onLoad={() => setImageLoading(false)}
+                        />
+                    </div>
+                </div>
+             </div>
         )}
         </>
     );

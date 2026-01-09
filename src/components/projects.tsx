@@ -171,6 +171,8 @@
     
     // Dynamic state for visible cards based on screen size
     const [itemsPerPage, setItemsPerPage] = useState(3);
+    const [videoLoading, setVideoLoading] = useState(true);
+
 
     // Effect to update itemsPerPage on window resize
     useEffect(() => {
@@ -305,15 +307,23 @@
                     <div
                         className="bg-white dark:bg-black rounded-lg w-[90%] max-w-4xl p-4 max-h-[90vh] overflow-y-auto scrollbar-none"
                         onClick={(e) => e.stopPropagation()}
-                    >
+                    >   
+                      
                         {/* // video section */}
                         <div className="relative pt-[56.25%]">
+                            
+                            {/* // Skeleton loader */}
+                            {videoLoading && (
+                            <div className="absolute inset-0 w-full h-full  bg-gray-300 dark:bg-gray-400 rounded-md animate-pulse"></div>
+                            )}
                             <iframe
-                                className="absolute inset-0 w-full h-full rounded-md"
+                                className={`absolute inset-0 w-full h-full rounded-md ${videoLoading ? 'hidden' : ''}`}
                                 src={`${activeProject.demo}?autoplay=1&mute=1`}
                                 allow="autoplay; fullscreen"
                                 allowFullScreen
                                 title={`${activeProject.title} demo video`}
+                                onLoad={() => setVideoLoading(false)}
+
                             />
                         </div>
 
@@ -348,7 +358,7 @@
                                 </div>
                             </div>
                         )}  
-                        <div className="mt-4 flex justify-end">
+                        <div className="mt-4 flex justify-start md:justify-end">
                             <button
                                 onClick={() => setActiveProject(null)}
                                 className="px-4 py-2 text-sm rounded-md bg-sky-600 text-white hover:bg-sky-700"
