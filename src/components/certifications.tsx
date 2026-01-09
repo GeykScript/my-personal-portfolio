@@ -121,12 +121,13 @@
                         {/* Image Wrapper */}
                     <div className="relative max-h-[85vh] w-auto max-w-full flex items-center justify-center">
 
-                        {/* Skeleton */}
+                           {/* Skeleton */}
                         {imageLoading && (
                         <div className="absolute inset-0 flex items-center justify-center">
                             <div className="w-full h-full bg-gray-300 dark:bg-gray-400 rounded-md animate-pulse"></div>
                         </div>
                         )}
+
 
                         {/* Image */}
                         <img
@@ -134,7 +135,7 @@
                         alt="Certificate"
                         className={`max-h-[85vh] w-auto max-w-full rounded-md shadow-2xl object-contain bg-white
                             transition-opacity duration-300
-                            ${imageLoading ? 'hidden' : ''}
+                            ${imageLoading ? "opacity-0" : "opacity-100"}
                         `}
                         onLoad={() => setImageLoading(false)}
                         />
