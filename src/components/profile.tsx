@@ -18,7 +18,7 @@ export default function profile() {
                             1500, 
                             'UI/UX Designer',
                             1500,
-                            'Data Engineer',
+                            'Software Engineer',
                             1500
                         ]}
                         wrapper="h1"

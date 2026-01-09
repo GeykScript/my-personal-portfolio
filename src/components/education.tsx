@@ -1,6 +1,6 @@
 export default function Education() {
     return (
-         <div className="border border-gray-200 rounded-lg flex flex-col justify-center p-4 shadow-sm dark:bg-gray-700/10 dark:shadow-gray-100/10   dark:border-gray-800/30">
+         <div className="border border-gray-200 rounded-lg flex flex-col justify-center p-4 shadow-sm dark:bg-gray-700/10 dark:shadow-gray-100/10   dark:border-gray-800/30 ">
             <div className="flex justify-between items-center">
                 <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
                 <span className="material-icons scale-80 mr-1">school</span>
