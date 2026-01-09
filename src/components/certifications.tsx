@@ -105,7 +105,7 @@
                     {/* Close Button */}
                     <button 
                     onClick={handleCloseImage}
-                    className="text-gray-100 bg-none hover:cursor-pointer "
+                    className={`text-gray-100 bg-none hover:cursor-pointer ${imageLoading ? "hidden" : ""} `}
                     >
                     <span className="material-icons text-3xl">close</span>
                     </button>
