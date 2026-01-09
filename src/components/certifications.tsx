@@ -127,21 +127,13 @@
 
             <div className="relative max-h-[85vh] w-auto max-w-full flex items-center justify-center">
               
-              {/* Skeleton Loader 
-                  2. I added w-64 h-48 to force the modal to have size while loading.
-                  I removed 'absolute inset-0' so it takes up actual physical space.
-              */}
+              {/* Skeleton Loader */}
               {imageLoading && (
-                <div className="w-70 h-60 sm:w-96 sm:h-64 bg-gray-300 dark:bg-gray-600 rounded-md animate-pulse flex items-center justify-center">
-                    {/* Optional spinner icon inside the skeleton */}
-                    <span className="material-icons text-4xl text-gray-400 animate-spin">refresh</span>
+                <div className="w-70 h-60 sm:w-3xl sm:h-100 bg-gray-300 dark:bg-gray-600 rounded-md animate-pulse flex items-center justify-center">
                 </div>
               )}
 
-              {/* Image 
-                  3. Added key={selectedImage}. This forces React to destroy and recreate the img tag.
-                  4. Using 'hidden' vs 'block' instead of opacity ensures the skeleton dictates the size when loading.
-              */}
+              {/* Image */}
               <img
                 key={selectedImage} 
                 src={selectedImage}
