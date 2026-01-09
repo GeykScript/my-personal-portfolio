@@ -1,4 +1,4 @@
-    import { useState } from 'react';
+    import { useState, useEffect } from 'react';
 
     const certificates = [
     {
@@ -63,6 +63,12 @@
         setSelectedImage(null);
     };
 
+    useEffect(() => {
+  if (selectedImage) {
+    setImageLoading(true);
+  }
+}, [selectedImage]);
+
     return (
         <>
         <div className="border border-gray-200 rounded-lg flex flex-col justify-center p-4 shadow-sm relative  dark:border-gray-800/30 dark:bg-gray-700/10 dark:shadow-gray-100/10 ">
@@ -101,14 +107,15 @@
                 onClick={handleCloseImage}
                 >
                 <div className="w-auto max-w-[95vw] max-h-screen flex flex-col items-end relative">
-                    
-                    {/* Close Button */}
-                    <button 
-                    onClick={handleCloseImage}
-                    className={`text-gray-100 bg-none hover:cursor-pointer ${imageLoading ? "hidden" : ""} `}
-                    >
-                    <span className="material-icons text-3xl">close</span>
-                    </button>
+                        {/* Close Button */}
+                        {!imageLoading && (
+                        <button
+                            onClick={handleCloseImage}
+                            className="text-gray-100 hover:cursor-pointer"
+                        >
+                            <span className="material-icons text-3xl">close</span>
+                        </button>
+                        )}
                     
                         {/* Image Wrapper */}
                     <div className="relative max-h-[85vh] w-auto max-w-full flex items-center justify-center">

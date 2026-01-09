@@ -176,6 +176,8 @@
 
     // Effect to update itemsPerPage on window resize
     useEffect(() => {
+
+        
         const handleResize = () => {
         if (window.innerWidth >= 1024) {
             setItemsPerPage(3);
@@ -193,6 +195,14 @@
 
         return () => window.removeEventListener("resize", handleResize);
     }, []);
+
+
+    // Effect to set video loading state when activeProject changes
+    useEffect(() => {
+    if (activeProject) {
+        setVideoLoading(true);
+    }
+    }, [activeProject]);
 
     // Calculate maximum index based on current itemsPerPage
     const maxIndex = Math.max(projects.length - itemsPerPage, 0);
