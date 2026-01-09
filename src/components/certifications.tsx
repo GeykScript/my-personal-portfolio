@@ -1,4 +1,4 @@
-    import { useState } from 'react';
+    import { useEffect, useState } from 'react';
 
     const certificates = [
     {
@@ -55,14 +55,17 @@
 
     const handleOpenImage = (imagePath: string | null) => {
         if (imagePath) {
+        setImageLoading(true);
         setSelectedImage(imagePath);
         }
     };
 
     const handleCloseImage = () => {
         setSelectedImage(null);
+        setImageLoading(true);
     };
 
+    
     return (
         <>
         <div className="border border-gray-200 rounded-lg flex flex-col justify-center p-4 shadow-sm relative  dark:border-gray-800/30 dark:bg-gray-700/10 dark:shadow-gray-100/10 ">
@@ -102,15 +105,18 @@
                 >
                 <div className="w-auto max-w-[95vw] max-h-screen flex flex-col items-end relative">
                     
-                    {/* Close Button */}
                     {!imageLoading && (
-                    <button 
-                    onClick={handleCloseImage}
-                    className="text-gray-100 bg-none hover:cursor-pointer "
-                    >
-                    <span className="material-icons text-3xl">close</span>
-                    </button>
-                    )}
+                                <button
+                                    type="button"
+                                    onClick={(e) => {
+                                    e.stopPropagation(); // Prevent closing the modal when clicking the button specifically
+                                    handleCloseImage();
+                                    }}
+                                    className="text-gray-100 bg-none hover:cursor-pointer mb-2" // Added mb-2 for spacing
+                                >
+                                    <span className="material-icons text-3xl">close</span>
+                                </button>
+                                )}
                     
                         {/* Image Wrapper */}
                     <div className="relative max-h-[85vh] w-auto max-w-full flex items-center justify-center">
@@ -128,7 +134,7 @@
                         alt="Certificate"
                         className={`max-h-[85vh] w-auto max-w-full rounded-md shadow-2xl object-contain bg-white
                             transition-opacity duration-300
-                            ${imageLoading ? "opacity-0" : "opacity-100"}
+                            ${imageLoading ? 'hidden' : ''}
                         `}
                         onLoad={() => setImageLoading(false)}
                         />
