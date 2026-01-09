@@ -125,26 +125,32 @@
                 </button>
                 )}
 
-                <div className="relative max-h-[85vh] w-auto max-w-full flex items-center justify-center">
-                
-                {/* Skeleton Loader */}
-                        {imageLoading && (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-full h-full bg-gray-300 dark:bg-gray-400 rounded-md animate-pulse"></div>
-                        </div>
-                        )}
+<div className="relative max-h-[85vh] w-auto max-w-full flex items-center justify-center">
+      
+      {/* Skeleton Loader */}
+      {imageLoading && (
+        <div 
+          className="h-70 w-xl bg-gray-300 dark:bg-gray-600 rounded-md animate-pulse flex items-center justify-center"
+        >
+           {/* Optional: Add a subtle icon inside the skeleton while loading */}
+           <svg className="w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+           </svg>
+        </div>
+      )}
 
-                {/* Image */}
-                <img
-                    key={selectedImage} 
-                    src={selectedImage}
-                    alt="Certificate"
-                    className={`max-h-[85vh] w-auto max-w-full rounded-md shadow-2xl object-contain bg-white transition-opacity duration-300 ${
-                    imageLoading ? 'opacity-0' : 'opacity-100'
-                    }`}
-                    onLoad={() => setImageLoading(false)}
-                />
-                </div>
+      {/* Image */}
+      <img
+        key={selectedImage} 
+        src={selectedImage}
+        alt="Certificate"
+        // Keeps the image in the DOM but hidden until loaded to prevent layout jumps
+        className={`max-h-[85vh] w-auto max-w-full rounded-md shadow-2xl object-contain bg-white transition-opacity duration-300 ${
+          imageLoading ? 'hidden' : 'block'
+        }`}
+        onLoad={() => setImageLoading(false)}
+      />
+</div>
             </div>
             </div>
         )}
