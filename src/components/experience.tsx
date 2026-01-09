@@ -14,7 +14,7 @@ const experiences = [
     description: "Built a blog website for a client, themed around Pablo Neruda’s “Your Laughter” poem."
   },
   {
-    title: "Full-Stack Web Developer |UI/UX Designer",
+    title: "Full-Stack Web Developer | UI/UX Designer",
     project: "FurrHUB",
     year: "2025",
     description: "Developed a full-stack web-based E-Commerce platform for pet products and services."

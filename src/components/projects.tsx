@@ -181,7 +181,7 @@
         const handleResize = () => {
         if (window.innerWidth >= 1024) {
             setItemsPerPage(3);
-        } else if (window.innerWidth >= 640) {
+        } else if (window.innerWidth >= 320) {
             setItemsPerPage(2);
         } else {
             setItemsPerPage(1);
