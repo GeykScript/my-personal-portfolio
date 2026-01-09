@@ -50,7 +50,7 @@ export default function profile() {
                         </div>
                         {/* buttons  */}
                         <div className="col-span-12 md:col-span-11  xl:col-span-6 flex justify-center gap-2 xl:py-6 py-4 ">
-                            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-white bg-gray-900 dark:bg-sky-600 px-2 lg:px-4 py-1 sm:py-2 text-center rounded-lg text-xs 2xl:text-sm flex justify-center items-center  hover:shadow-lg hover:cursor-pointer hover:bg-sky-500 hover:border-sky-500 dark:shadow-gray-100/10">
+                            <a href="/Morales,JervyJake-ResumeV1.pdf" target="_blank" rel="noopener noreferrer" className="text-white bg-gray-900 dark:bg-sky-600 px-2 lg:px-4 py-1 sm:py-2 text-center rounded-lg text-xs 2xl:text-sm flex justify-center items-center  hover:shadow-lg hover:cursor-pointer hover:bg-sky-500 hover:border-sky-500 dark:shadow-gray-100/10">
                                 <span className="material-icons-outlined scale-70">description</span>View Resume</a>
                             <a rel="noopener noreferrer" href="https://mail.google.com/mail/?view=cm&fs=1&to=jervyjakemorales07@gmail.com" target="_blank" 
                                 className="dark:text-gray-300 text-gray-900 border border-gray-400 dark:border-gray-300 px-2 lg:px-4 py-1 sm:py-2  rounded-lg text-xs 2xl:text-sm flex justify-center text-center items-center  hover:shadow-lg hover:cursor-pointer hover:text-sky-600 hover:border-sky-600 dark:shadow-gray-100/10 ">
@@ -84,7 +84,7 @@ export default function profile() {
                                             <div className="flex items-center ">
                                             <img src="PH-Flag.png" alt="PH Flag" className="w-8 h-4 " />
                                             </div>
-                                            <a href="tel:+639669892331" className="text-sky-600 hover:underline hover:underline-offset-6 font-semibold"><span className="dark:text-white text-gray-500 ">(+63)</span> 966 989 2331</a>
+                                            <a href="tel:+639669862331" className="text-sky-600 hover:underline hover:underline-offset-6 font-semibold"><span className="dark:text-white text-gray-500 ">(+63)</span> 966 986 2331</a>
                                         </div>
                                     </div>
                                     <div className="flex flex-col ">

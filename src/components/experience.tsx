@@ -16,7 +16,7 @@ const experiences = [
   {
     title: "Full-Stack Web Developer / UI/UX Designer",
     project: "FurrHUB",
-    year: "2024",
+    year: "2025",
     description: "Developed a full-stack web-based E-Commerce platform for pet products and services."
   }, 
 

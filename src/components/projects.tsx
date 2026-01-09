@@ -31,6 +31,8 @@
             "https://img.shields.io/badge/figma-%23ED1965.svg?style=for-the-badge&logo=figma&logoColor=white",
             "https://img.shields.io/badge/github-%23181717.svg?style=for-the-badge&logo=github&logoColor=white",
             "https://img.shields.io/badge/git-%23F05032.svg?style=for-the-badge&logo=git&logoColor=white",
+            "https://img.shields.io/badge/hostinger-%23673DE6.svg?style=for-the-badge&logo=hostinger&logoColor=white",
+
         ],
         description: (
             <>
@@ -79,6 +81,8 @@
             "https://img.shields.io/badge/github-%23181717.svg?style=for-the-badge&logo=github&logoColor=white",
             "https://img.shields.io/badge/git-%23F05032.svg?style=for-the-badge&logo=git&logoColor=white",
             "https://img.shields.io/badge/canva-%238A2BE2.svg?style=for-the-badge&logo=chai&logoColor=white",
+            "https://img.shields.io/badge/hostinger-%23673DE6.svg?style=for-the-badge&logo=hostinger&logoColor=white",
+
         ],
         description: (
             <>
