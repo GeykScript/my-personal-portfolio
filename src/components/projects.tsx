@@ -355,12 +355,14 @@
                             <iframe
                                 className={`absolute inset-0 w-full h-full rounded-md ${videoLoading ? 'hidden' : ''}`}
                                 src={`${activeProject.demo}?autoplay=1&mute=1`}
-                                allow="autoplay; fullscreen"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerPolicy="strict-origin-when-cross-origin"
                                 allowFullScreen
                                 title={`${activeProject.title} demo video`}
                                 onLoad={() => setVideoLoading(false)}
+                            ></iframe>
 
-                            />
+                            
                         </div>
 
                         {/* tools used section */}
