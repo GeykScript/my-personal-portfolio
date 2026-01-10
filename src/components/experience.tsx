@@ -78,7 +78,7 @@ export default function Experience() {
                 >
                   {exp.title} <br />
                   <span 
-                    className="font-semibold text-gray-600 dark:text-gray-300
+                    className="font-semibold text-gray-600 dark:text-gray-300 italic
                               transition-colors duration-300
                               group-hover:text-sky-500" 
                     id="project"

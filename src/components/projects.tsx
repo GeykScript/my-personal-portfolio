@@ -37,7 +37,7 @@
         ],
         description: (
             <>
-                <p className="mb-4 text-justify">
+                <p className="mb-4  ">
                     <b>iBiteCare+</b> is an all-in-one web application designed to modernize Dr.Care Animal Bite Center (Guinobatan). It replaces manual paperwork with a digital system that makes running the clinic faster, safer, and more efficient.
                 </p>   
             </>
@@ -46,7 +46,7 @@
             <>
                 <div>
                 <p className="font-bold mb-2">Key Features:</p>
-                <ul className="list-disc pl-8 space-y-2 text-justify">
+                <ul className="list-disc pl-8 space-y-2 ">
                     <li>
                         <span className="font-semibold">Visual Patient Records:</span> Stores patient info digitally and features a Body Part Selector that lets staff click a visual map to record exactly where a patient was bitten.
                     </li>
@@ -93,7 +93,7 @@
         ],
         description: (
             <>
-                <p className="mb-4 text-justify">
+                <p className="mb-4 ">
                     <b>FurrHUB</b> is a specialized B2C e-commerce platform designed to modernize pet shop operations. It bridges the gap between retail and service, providing a seamless experience for pet owners to shop and book appointments while giving business owners powerful tools to manage their store.
                 </p>
             </>
@@ -102,7 +102,7 @@
             <>
                 <div>
                     <p className="font-bold mb-2">Key Features:</p>
-                    <ul className="list-disc pl-8 space-y-2 text-justify">
+                    <ul className="list-disc pl-8 space-y-2 ">
                         <li>
                             <span className="font-semibold">One-Stop Shop:</span> A complete online catalog allowing customers to easily browse and order pet supplies, food, and accessories.
                         </li>
@@ -144,7 +144,7 @@
         ],
         description: (
             <>
-                <p className="mb-4 text-justify">
+                <p className="mb-4 ">
                     <b>iStud</b> is a simple software application built with C# and MySQL. It is designed to help schools or registrars manage student data, enrollment processes, and academic records efficiently without using manual paper files.
                 </p>
                 
@@ -154,7 +154,7 @@
             <>
                 <div>
                     <p className="font-bold mb-2">Key Features:</p>
-                    <ul className="list-disc pl-8 space-y-2 text-justify">
+                    <ul className="list-disc pl-8 space-y-2 ">
                         <li>
                             <span className="font-semibold">Student Records:</span> securely stores personal details and profiles for every student in the system.
                         </li>

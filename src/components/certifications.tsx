@@ -6,7 +6,7 @@
             image: "/certificate/udemy-web.jpg", 
             description: (
             <>
-                Certificate of Completion from <span className='font-semibold group-hover:text-sky-600'>Udemy</span>, issued on June 15, 2025, for completing <span className='group-hover:underline underline-offset-3 group-hover:text-sky-600'>"The Complete Full-Stack Web Development Bootcamp."</span>
+                Certificate of Completion from <span className='font-semibold group-hover:text-sky-500'>Udemy</span>, issued on June 15, 2025, for completing <span className='group-hover:underline underline-offset-3 group-hover:text-sky-500'>"The Complete Full-Stack Web Development Bootcamp."</span>
             </>
             )
         },
@@ -15,7 +15,7 @@
             image: "/certificate/freecodecamp-web.png", 
             description: (
             <>
-                Developer Certification from <span className='font-semibold group-hover:text-sky-600'>freeCodeCamp</span>, issued on June 30, 2023, for <span className='group-hover:underline underline-offset-3 group-hover:text-sky-600'> Completing approximately 300 hours of coursework.</span>
+                Developer Certification from <span className='font-semibold group-hover:text-sky-500'>freeCodeCamp</span>, issued on June 30, 2023, for <span className='group-hover:underline underline-offset-3 group-hover:text-sky-500'> Completing approximately 300 hours of coursework.</span>
             </>
             )
         },
@@ -24,7 +24,7 @@
             image: "/certificate/c-intermediate.png",
             description: (
             <>
-                Course Certificate from <span className='font-semibold group-hover:text-sky-600'>Sololearn</span>, issued on June 22, 2023, for <span className='group-hover:underline underline-offset-3 group-hover:text-sky-600'>Completing the intermediate course in C programming.</span>
+                Course Certificate from <span className='font-semibold group-hover:text-sky-500'>Sololearn</span>, issued on June 22, 2023, for <span className='group-hover:underline underline-offset-3 group-hover:text-sky-500'>Completing the intermediate course in C programming.</span>
             </>
             )
         },
@@ -33,7 +33,7 @@
             image: "/certificate/learn-java.jpg",
             description: (
             <>
-                Certificate of Completion from <span className='font-semibold group-hover:text-sky-600'>Udemy</span>, issued on June 18, 2023, for completing <span className='group-hover:underline underline-offset-3 group-hover:text-sky-600'>"Learn & Understand Java From Scratch."</span>
+                Certificate of Completion from <span className='font-semibold group-hover:text-sky-500'>Udemy</span>, issued on June 18, 2023, for completing <span className='group-hover:underline underline-offset-3 group-hover:text-sky-500'>"Learn & Understand Java From Scratch."</span>
             </>
             )
         },
@@ -42,7 +42,7 @@
             image: "/certificate/intro-to-java.jpg",
             description: (
             <>
-                Course Certificate from <span className='font-semibold group-hover:text-sky-600'>Sololearn</span>, issued on June 19, 2023, for <span className='group-hover:underline underline-offset-3 group-hover:text-sky-600'>Completing the introductory course in Java programming.</span>
+                Course Certificate from <span className='font-semibold group-hover:text-sky-500'>Sololearn</span>, issued on June 19, 2023, for <span className='group-hover:underline underline-offset-3 group-hover:text-sky-500'>Completing the introductory course in Java programming.</span>
             </>
             )
         }
@@ -81,7 +81,7 @@
                 onClick={() => handleOpenImage(cert.image)}
                 >
                 <div className="flex items-start justify-between">
-                    <h4 className="font-bold text-gray-700 dark:text-gray-400 group-hover:text-sky-600 text-sm">
+                    <h4 className="font-bold text-gray-700 dark:text-gray-200 group-hover:text-sky-600 text-sm">
                     {cert.title}
                     </h4>
                     <button
@@ -90,12 +90,12 @@
                         e.stopPropagation();
                         handleOpenImage(cert.image);
                     }}
-                    className="group-hover:text-sky-600 text-gray-700 dark:text-gray-400 hover:cursor-pointer transition-colors"
+                    className="group-hover:text-sky-500 text-gray-700 dark:text-gray-200 hover:cursor-pointer transition-colors"
                     >
                     <span className="material-icons">fullscreen</span>
                     </button>
                 </div>
-                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="text-xs text-gray-600 dark:text-gray-50 leading-relaxed">
                     {cert.description}
                 </p>
                 </div>
