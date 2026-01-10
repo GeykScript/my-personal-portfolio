@@ -27,7 +27,7 @@
          </span>
 
          <p className={`${showMore ? "inline" : "hidden"} sm:inline ml-2`}>
-            This internship is a school requirement with a total of 480 hours and I am fully available to commit throughout its entire duration. An internship with an
+            This internship is a academic requirement with a total of 480 hours, and I am fully available to commit throughout its entire duration. An internship with an
             allowance would be appreciated.
          </p>
          </div>
