@@ -6,8 +6,7 @@ export default function About() {
                I am a 4th Year BSIT Student at Bicol University with a passion for web development. I have hands-on experience in creating responsive and user-friendly websites using PHP, JavaScript, MySQL, and various frameworks. I am eager to apply my skills and knowledge in real-world projects while continuously learning and growing in the field of technology.
 
                <br /><br />
-               Currently, I am seeking internship opportunities where I can contribute to dynamic teams, gain practical experience, and further develop my expertise in web development and related technologies.
-            </p>
+I am currently seeking an internship opportunity where I can contribute to a dynamic team, gain hands-on experience, and further develop my skills gain practical industry experience. This internship is a school requirement totaling 480 hours, and I am available to commit fully for its duration. An internship with an allowance would be appreciated.            </p>
          </div>
     );
 
