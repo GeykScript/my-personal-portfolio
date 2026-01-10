@@ -10,6 +10,7 @@
     image?: string;
     techStack?: string[];
     description?: JSX.Element;
+    features?: JSX.Element;
     };
 
     export default function Projects() {
@@ -38,9 +39,14 @@
             <>
                 <p className="mb-4 text-justify">
                     <b>iBiteCare+</b> is an all-in-one web application designed to modernize Dr.Care Animal Bite Center (Guinobatan). It replaces manual paperwork with a digital system that makes running the clinic faster, safer, and more efficient.
-                </p>
+                </p>   
+            </>
+        ),
+        features: (
+            <>
+                <div>
                 <p className="font-bold mb-2">Key Features:</p>
-                <ul className="list-disc pl-8 space-y-2 ">
+                <ul className="list-disc pl-8 space-y-2 text-justify">
                     <li>
                         <span className="font-semibold">Visual Patient Records:</span> Stores patient info digitally and features a Body Part Selector that lets staff click a visual map to record exactly where a patient was bitten.
                     </li>
@@ -60,6 +66,7 @@
                         <span className="font-semibold">Reports & Visualization:</span> Provides real-time data visualization and generates detailed quarterly reports for sales, patient data, and inventory.
                     </li>
                 </ul>
+                </div>
             </>
         ),
         },
@@ -89,24 +96,30 @@
                 <p className="mb-4 text-justify">
                     <b>FurrHUB</b> is a specialized B2C e-commerce platform designed to modernize pet shop operations. It bridges the gap between retail and service, providing a seamless experience for pet owners to shop and book appointments while giving business owners powerful tools to manage their store.
                 </p>
-                <p className="font-bold mb-2">Key Features:</p>
-                <ul className="list-disc pl-5 space-y-2">
-                    <li>
-                        <span className="font-semibold">One-Stop Shop:</span> A complete online catalog allowing customers to easily browse and order pet supplies, food, and accessories.
-                    </li>
-                    <li>
-                        <span className="font-semibold">Service Booking:</span> Integrated appointment scheduling system for grooming, veterinary checkups, or pet boarding services.
-                    </li>
-                    <li>
-                        <span className="font-semibold">Secure Payments:</span> Seamless online payment processing via Paymongo, supporting GCash, GrabPay, and Credit/Debit cards.
-                    </li>
-                    <li>
-                        <span className="font-semibold">Business Management:</span> Comprehensive backend for managing inventory stock, tracking sales history, and maintaining digital customer records.
-                    </li>
-                    <li>
-                        <span className="font-semibold">Reports & Visualization:</span> Provides real-time data visualization and generates detailed reports for sales performance and inventory health.
-                    </li>
-                </ul>
+            </>
+        ),
+        features: (
+            <>
+                <div>
+                    <p className="font-bold mb-2">Key Features:</p>
+                    <ul className="list-disc pl-8 space-y-2 text-justify">
+                        <li>
+                            <span className="font-semibold">One-Stop Shop:</span> A complete online catalog allowing customers to easily browse and order pet supplies, food, and accessories.
+                        </li>
+                        <li>
+                            <span className="font-semibold">Service Booking:</span> Integrated appointment scheduling system for grooming, veterinary checkups, or pet boarding services.
+                        </li>
+                        <li>
+                            <span className="font-semibold">Secure Payments:</span> Seamless online payment processing via Paymongo, supporting GCash, GrabPay, and Credit/Debit cards.
+                        </li>
+                        <li>
+                            <span className="font-semibold">Business Management:</span> Comprehensive backend for managing inventory stock, tracking sales history, and maintaining digital customer records.
+                        </li>
+                        <li>
+                            <span className="font-semibold">Reports & Visualization:</span> Provides real-time data visualization and generates detailed reports for sales performance and inventory health.
+                        </li>
+                    </ul>
+                </div>
             </>
         ),
         },
@@ -134,24 +147,32 @@
                 <p className="mb-4 text-justify">
                     <b>iStud</b> is a simple software application built with C# and MySQL. It is designed to help schools or registrars manage student data, enrollment processes, and academic records efficiently without using manual paper files.
                 </p>
-                <p className="font-bold mb-2">Key Features:</p>
-                <ul className="list-disc pl-5 space-y-2">
-                    <li>
-                        <span className="font-semibold">Student Records:</span> securely stores personal details and profiles for every student in the system.
-                    </li>
-                    <li>
-                        <span className="font-semibold">Enrollments & Payments:</span> Handles the registration process for new students and tracks tuition fee payments.
-                    </li>
-                    <li>
-                        <span className="font-semibold">Courses:</span> Manages the list of subjects and classes available for enrollment.
-                    </li>
-                    <li>
-                        <span className="font-semibold">Grades:</span> Allows specific users to input, calculate, and view student grades for their subjects.
-                    </li>
-                    <li>
-                        <span className="font-semibold">Reports:</span> Generates simple summaries and lists for enrollment data, grades, and financial records.
-                    </li>
-                </ul>
+                
+            </>
+        ),
+        features: (
+            <>
+                <div>
+                    <p className="font-bold mb-2">Key Features:</p>
+                    <ul className="list-disc pl-8 space-y-2 text-justify">
+                        <li>
+                            <span className="font-semibold">Student Records:</span> securely stores personal details and profiles for every student in the system.
+                        </li>
+                        <li>
+                            <span className="font-semibold">Enrollments & Payments:</span> Handles the registration process for new students and tracks tuition fee payments.
+                        </li>
+                        <li>
+                            <span className="font-semibold">Courses:</span> Manages the list of subjects and classes available for enrollment.
+                        </li>
+                        <li>
+                            <span className="font-semibold">Grades:</span> Allows specific users to input, calculate, and view student grades for their subjects.
+                        </li>
+                        <li>
+                            <span className="font-semibold">Reports:</span> Generates simple summaries and lists for enrollment data, grades, and financial records.
+                        </li>
+                    </ul>
+                </div>
+                
             </>
         ),
         },
@@ -172,6 +193,7 @@
     // Dynamic state for visible cards based on screen size
     const [itemsPerPage, setItemsPerPage] = useState(3);
     const [videoLoading, setVideoLoading] = useState(true);
+  const [showMore, setShowMore] = useState(false);
 
 
     // Effect to update itemsPerPage on window resize
@@ -361,14 +383,28 @@
                             </div>
                         </div>
                         )}
-                        {activeProject.description && (
+                        {activeProject.description && activeProject.features && (
                             <div className="mt-6 px-6">
                                 <h3 className="flex items-center font-bold text-gray-800 dark:text-white text-lg">
                                     <span className="material-icons scale-80 mr-1">info</span>
                                     Details
                                 </h3>
                                 <div className="flex flex-col mt-4 text-gray-900 dark:text-gray-200 p-4 bg-gray-50 rounded-md dark:bg-gray-800/30 shadow-sm dark:shadow-gray-100/10 ">
-                                {activeProject.description}
+                                    {activeProject.description}
+                                        <div className={showMore ? "block" : "hidden md:block"}>
+                                            {activeProject.features}
+                                        </div>
+
+                                        {/* Button only on small screens */}
+                                        <button
+                                            onClick={() => setShowMore(!showMore)}
+                                            className="mt-2 text-sm text-sky-600 hover:underline md:hidden self-end flex items-center gap-1"
+                                        >
+                                            {showMore ? "Show less" : "Show more"}
+                                            <span className="material-icons">
+                                            {showMore ? "expand_less" : "expand_more"}
+                                            </span>
+                                        </button>
                                 </div>
                             </div>
                         )}  
